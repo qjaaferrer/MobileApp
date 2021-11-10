@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import com.example.project.databinding.FragmentLoginBinding
 
 
 class LoginFragment : Fragment() {
@@ -15,8 +19,37 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        val binding = DataBindingUtil.inflate<FragmentLoginBinding>(
+            inflater,
+            R.layout.fragment_login,
+            container,
+            false)
+
+        binding.btnlogin.setOnClickListener{view : View ->
+            val username = binding.editusername.text.toString()
+            val password = binding.editpassword.text.toString()
+
+            if ((username == "jferrer") && (password == "jferrer123")){
+                view.findNavController().navigate(R.id.action_loginFragment2_to_homeFragment2)
+                val toast = Toast.makeText(context, "Welcome Home $username",Toast.LENGTH_SHORT)
+                toast.show()
+            }
+            else{
+                val toast = Toast.makeText(context,"Incorrect Username or password", Toast.LENGTH_SHORT)
+                toast.show()
+            }
+
+
+        }
+
+        binding.btnsignup.setOnClickListener { view: View ->
+            view.findNavController().navigate(R.id.action_loginFragment2_to_registerFragment)
+
+        }
+
+            return binding.root
     }
 
 
 }
+

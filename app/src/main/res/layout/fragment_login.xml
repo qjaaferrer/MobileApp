@@ -5,11 +5,25 @@
     tools:context=".LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/titleConstraints"
+        android:id="@+id/loginConstraints"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/sea">
 
+
+        <TextView
+            android:id="@+id/copyright3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:fontFamily="casual"
+            android:text="©2021 Aqua Cuidado. All rights reserved | Design by 4j's "
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnsignup" />
 
         <EditText
             android:id="@+id/editusername"
@@ -40,7 +54,7 @@
             android:id="@+id/btnlogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="52dp"
             android:text="log in"
             app:backgroundTint="#F44336"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,11 +88,12 @@
             android:id="@+id/textaccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="63dp"
+            android:layout_marginTop="44dp"
             android:fontFamily="sans-serif-black"
             android:text="Create an Account?"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
 
@@ -86,10 +101,11 @@
             android:id="@+id/btnsignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:text="sign up"
             app:backgroundTint="#F44336"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textaccount" />
 
@@ -117,6 +133,7 @@
             app:layout_constraintHorizontal_bias="0.471"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
